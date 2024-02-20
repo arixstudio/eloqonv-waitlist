@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eloqonv</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<style>
+			#catchphrase-1 {
+				display: none;
+			}
+			#catchphrase-2 {
+				display: none;
+			}
+			.show {
+				display: block!important;
+			}
+			#submit-email.alt2 {
+				background-color: #b799f9;
+			}
+		</style>
+		<!-- Header -->
+			<header id="header">
+				<h1>eloqonv</h1>
+				<p id="catchphrase-1">An AI powered tool to enhance your language learning journey.</br>
+				 Join the wait list to get early access!</p>
+				<p id="catchphrase-2">Whant to learn a new language with no pain?</br>
+				 Join the hundreds of eloqonv lovers wating for the early access!</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="#">
+				<input type="email" name="email" id="email" placeholder="Email Address" />
+				<input id="submit-email" type="submit" class="alt1" value="Join now!" />
+			</form>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://github.com/arixstudio" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="mailto:him@arashbesharat.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; 2024.</li><li>Developed by <a href="http://arashbesharat.com">Arash Besharat</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+			<script>
+				function getRandomNumber() {
+					return Math.random() < 0.5 ? 1 : 2;
+				}
+
+				function alterVersions() {
+					var randomNumber = getRandomNumber();
+					document.getElementById('catchphrase-' + randomNumber).classList.add('show');
+					document.getElementById('submit-email').classList.add('alt' + randomNumber);
+					document.querySelector('#submit-email').addEventListener('click', function(e) {
+						e.preventDefault();
+						var selectedEl = document.querySelector('#catchphrase-' + randomNumber).innerText;
+						console.log('Version ' + randomNumber + ' is clicked!');
+						console.info('Content Version: ' + selectedEl);
+						console.info('CTA version: Alt' + randomNumber);
+					});
+				}
+
+				alterVersions();
+
+
+			</script>
+
+	</body>
+</html>
